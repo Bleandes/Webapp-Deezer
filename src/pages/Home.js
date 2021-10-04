@@ -1,8 +1,12 @@
-import React from 'react';
-import TextField from '../components/TextField';
+import React from "react";
+import TextField from "../components/TextField";
+import Item from "../components/Item";
+import Navigation from "../components/Navigation";
+
+import routes from '../routes';
 
 const Home = () => {
-  const [search, setSearch] = React.useState('');
+  const [search, setSearch] = React.useState("");
   return (
     <div>
       coxinha
@@ -24,6 +28,10 @@ const Home = () => {
             />
           </svg>
         }
+      />
+      <Item />
+      <Navigation
+        tabs={routes}
       />
     </div>
   );
