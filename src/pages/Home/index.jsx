@@ -1,16 +1,17 @@
 import React from 'react';
-import TextField from '../components/TextField';
-import Navigation from '../components/Navigation';
-import Player from '../components/Player';
-import Item from '../components/Item';
+import TextField from '../../components/TextField';
+import Navigation from '../../components/Navigation';
+import Player from '../../components/Player';
+import Item from '../../components/Item';
+import routes from '../../routes';
+import Titles from '../../components/Titles';
 
-import routes from '../routes';
-import Titles from '../components/Titles';
+import { Page } from './style';
 
 const Home = () => {
   const [search, setSearch] = React.useState('');
   return (
-    <div>
+    <Page>
       <TextField
         onChange={(event) => setSearch(event.target.value)}
         value={search}
@@ -170,7 +171,7 @@ const Home = () => {
         src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
       />
       <Navigation tabs={routes} />
-    </div>
+    </Page>
   );
 };
 

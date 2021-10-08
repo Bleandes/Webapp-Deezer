@@ -1,8 +1,8 @@
-import { typingReducer } from './clickReducer';
+import { typingReducer } from './typingReducer';
 import { OtherReducer } from './otherReducer';
 import { combineReducers } from 'redux';
 
 export const Reducers = combineReducers({
-  clickState: clickReducer,
+  typingReducer: typingReducer,
   otherState: otherReducer,
 });

@@ -16,12 +16,11 @@ export const Container = styled(Box)`
 
 export const NavigatorView = styled(Box)`
   flex: 0.5;
-  background-color: #0f0;
 `;
 
 export const PageView = styled(Box)`
   flex: 11.5;
-  background-color: #f00;
   overflow: hidden;
   overflow-y: scroll;
+  padding: 0 12pt;
 `;

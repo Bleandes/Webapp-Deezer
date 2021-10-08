@@ -3,7 +3,7 @@ const initialState = {
 };
 export const typingReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'CLICK_UPDATE_VALUE':
+    case 'TYPE_UPDATE_VALUE':
       return {
         ...state,
         newValue: action.newValue,

@@ -1,11 +1,12 @@
-import React from 'react';
-import Titles from '../components/Titles';
+import React from "react";
+import Titles from "../../components/Titles";
+import Item from "../../components/Item";
 
-import Item from '../components/Item';
+import { Page } from "./style";
 
 const Favorites = () => {
   return (
-    <div>
+    <Page id="jus test">
       <Titles title="Favoritos" />
       <Item
         title="Harder, Better, Faster, Stronger"
@@ -139,7 +140,7 @@ const Favorites = () => {
           </svg>
         }
       />
-    </div>
+    </Page>
   );
 };
 
