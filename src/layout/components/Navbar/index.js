@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import Navigation from "../../../components/Navigation";
 import Player from "../../../components/Player";
 import TextField from "../../../components/TextField";
@@ -10,7 +10,7 @@ import routes from "../../../routes";
 import connector from "../../../store/music/connector";
 
 function Component(props) {
-  const { searchText, setSearchText } = props;
+  const { searchText, setSearchText, player } = props;
   const dispatch = useDispatch();
 
   return (
@@ -20,10 +20,10 @@ function Component(props) {
       </NavView>
       <PlayerView>
         <Player
-          title="Harder, Better, Faster, Stronger"
-          subtitle="Daft Punk"
-          thumbnail="https://api.deezer.com/album/302127/image"
-          src="https://cdns-preview-d.dzcdn.net/stream/c-deda7fa9316d9e9e880d2c6207e92260-8.mp3"
+          title={player.title}
+          subtitle={player.subtitle}
+          thumbnail={player.thumbnail}
+          src={player.src}
         />
       </PlayerView>
       <SearchView>

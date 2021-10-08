@@ -1,5 +1,5 @@
 import axios, { } from "axios";
 
-let instance = axios.create({ baseURL: "https://api.deezer.com/" });
+let instance = axios.create({ baseURL: "http://localhost:8888" });
 
 export default instance;

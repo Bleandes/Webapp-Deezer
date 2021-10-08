@@ -1,15 +1,15 @@
-import React from 'react';
-import { Box, Container, Thumbnail, Title, Subtitle, Icon } from './style';
+import React from "react";
+import { Box, Container, Thumbnail, Title, Subtitle, Icon } from "./style";
 
 const Item = (props) => {
-  const { thumbnail, title, subtitle, iconfav, icondetail } = props;
+  const { thumbnail, title, subtitle, iconfav, icondetail, onClick } = props;
   return (
     <div>
-      <Container>
+      <Container onClick={() => onClick()}>
         <Thumbnail src={thumbnail} />
-        <Box style={{ flex: 11, flexDirection: 'column', padding: '8pt' }}>
+        <Box style={{ flex: 11, flexDirection: "column", padding: "8pt" }}>
           <Box style={{ flex: 1 }}>
-            <Box style={{ flex: 10, flexDirection: 'column' }}>
+            <Box style={{ flex: 10, flexDirection: "column" }}>
               <Title>{title}</Title>
               <Subtitle>{subtitle} -</Subtitle>
             </Box>
@@ -20,6 +20,10 @@ const Item = (props) => {
       </Container>
     </div>
   );
+};
+
+Item.defaultProps = {
+  onClick: () => undefined,
 };
 
 export default Item;

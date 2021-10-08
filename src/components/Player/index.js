@@ -6,6 +6,10 @@ const Player = (props) => {
   const [progress, setProgress] = useState(0);
   const [player] = useState(new Audio(src));
 
+  useEffect(() => {
+    player.src = src;
+  }, [src]);
+
   const handlePlayPause = useCallback(() => {
     if (player.paused) {
       player.play();
@@ -33,7 +37,7 @@ const Player = (props) => {
 
   return (
     <Container>
-      <Box style={{ flex: 1, alignItems: 'center', padding: '6pt' }}>
+      <Box style={{ flex: 1, alignItems: "center", padding: "6pt" }}>
         <Thumbnail src={thumbnail} />
       </Box>
       <Box style={{ flex: 10, flexDirection: "column", padding: "8pt" }}>

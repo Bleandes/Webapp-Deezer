@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   height: 4rem;
   padding: 6pt 0;
+  cursor: pointer;
 `;
 
 export const Thumbnail = styled.img`

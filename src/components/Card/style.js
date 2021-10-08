@@ -3,19 +3,22 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 210px;
+  height: 210px;
 `;
 
 export const Thumbnail = styled.img`
   background: #000;
   color: #fff;
-  width: 267px;
-  height: 283px;
+  width: 210px;
+  height: 210px;
 `;
 
 export const Box = styled.div`
-  flex:12;
+  max-width:200px;
+  display:flex;
+  flex:1;
   width: 200px;
-  height: 343px;
 `;
 
 export const Title = styled.h5`
@@ -32,8 +35,5 @@ export const Subtitle = styled.p`
 `;
 
 export const Icon = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  justify-content: end;
+  margin-left: 0.7rem;
 `;

@@ -6,3 +6,25 @@ export function setSearchText(value = "") {
     value: { searchText: value },
   };
 }
+
+export function setSearchResult(value = []) {
+  return {
+    type: ActionType.SET_SEARCH_RESULT,
+    value: { searchResult: value },
+  };
+}
+
+export function setPlayer(
+  value = {
+    id: undefined,
+    title: "Sem música",
+    subtitle: ".....",
+    thumbnail: "",
+    src: "",
+  }
+) {
+  return {
+    type: ActionType.SET_PLAYER,
+    value: { player: value },
+  };
+}

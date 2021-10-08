@@ -6,11 +6,21 @@ const Card = (props) => {
   return (
     <Container>
       <Thumbnail src={thumbnail} />
-      <Box>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle} -</Subtitle>
-        <Icon>{iconfav}</Icon>
-        <Icon> {icondetail}</Icon>
+      <Box style={{ flexDirection: 'row' }}>
+        <Box style={{ flex: 12, flexDirection: 'column' }}>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle} -</Subtitle>
+        </Box>
+        <Box
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            marginTop: '1rem',
+          }}
+        >
+          <Icon>{iconfav}</Icon>
+          <Icon> {icondetail}</Icon>
+        </Box>
       </Box>
     </Container>
   );
