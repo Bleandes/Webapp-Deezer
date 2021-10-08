@@ -9,7 +9,7 @@ const Card = (props) => {
       <Box style={{ flexDirection: 'row' }}>
         <Box style={{ flex: 12, flexDirection: 'column' }}>
           <Title>{title}</Title>
-          <Subtitle>{subtitle} -</Subtitle>
+          <Subtitle>{subtitle}</Subtitle>
         </Box>
         <Box
           style={{

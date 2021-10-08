@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Box = styled.div`
     display: flex;
@@ -39,4 +39,5 @@ export const SearchView = styled(Box)`
   align-items: center;
   justify-content: center;
   flex: 7;
+  
 `;

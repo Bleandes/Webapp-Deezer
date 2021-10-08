@@ -1,14 +1,13 @@
-import React, { useCallback, useEffect, useState } from "react";
-import TextField from "../../components/TextField";
-import Item from "../../components/Item";
-import Titles from "../../components/Titles";
+import React, { useCallback, useEffect, useState } from 'react';
+import TextField from '../../components/TextField';
+import Item from '../../components/Item';
+import Titles from '../../components/Titles';
 
-import { Page } from "./style";
-import Card from "../../components/Card";
+import { Page, SearchDesktop } from './style';
 
-import * as api from "../../services/api";
+import * as api from '../../services/api';
 
-import connector from "../../store/music/connector";
+import connector from '../../store/music/connector';
 
 const Home = connector((props) => {
   const {

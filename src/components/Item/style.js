@@ -34,7 +34,7 @@ export const Icon = styled.div`
   justify-content: center;
 `;
 
-
 export const Button = styled.button`
-  
+  background-color: transparent;
+  border: none;
 `;

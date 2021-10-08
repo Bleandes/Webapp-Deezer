@@ -25,5 +25,3 @@ export const TabIcon = styled.div`
 export const TabName = styled.small`
   color: #ffffff;
 `;
-
-// margin-top: 7rem;
