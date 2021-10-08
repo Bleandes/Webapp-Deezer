@@ -1,9 +1,9 @@
-import { IconButton } from "@mui/material";
-import Play from "@mui/icons-material/PlayCircle";
-import Pause from "@mui/icons-material/PauseCircle";
+import { IconButton } from '@mui/material';
+import Play from '@mui/icons-material/PlayCircle';
+import Pause from '@mui/icons-material/PauseCircle';
 
-import { Box, Container, Thumbnail, Slider, Title, Subtitle } from "./style";
-import { useCallback, useEffect, useState } from "react";
+import { Box, Container, Thumbnail, Slider, Title, Subtitle } from './style';
+import { useCallback, useEffect, useState } from 'react';
 
 const Player = (props) => {
   const { src, thumbnail, title, subtitle } = props;
@@ -18,39 +18,40 @@ const Player = (props) => {
     player.pause();
   }, [player]);
 
-  const handleSliderInput = useCallback((e) => {
-    player.currentTime = Number(e.target.value);
-  }, [player]);
+  const handleSliderInput = useCallback(
+    (e) => {
+      player.currentTime = Number(e.target.value);
+    },
+    [player],
+  );
 
   useEffect(() => {
     const timeupdate = () => {
       setProgress(player.currentTime);
     };
-    player.addEventListener("timeupdate", timeupdate);
+    player.addEventListener('timeupdate', timeupdate);
     return () => {
-      player.removeEventListener("timeupdate", timeupdate);
+      player.removeEventListener('timeupdate', timeupdate);
     };
   }, [player]);
 
   return (
     <Container>
-      <Thumbnail src={thumbnail} />
-      <Box style={{ flex: 11, flexDirection: "column", padding: "8pt" }}>
+      <Thumbnail src={thumbnail} /> 
+      <Box style={{ flex: 11, flexDirection: 'column', padding: '8pt' }}>
         <Box style={{ flex: 1 }}>
-          <Box style={{ flex: 10, flexDirection: "column" }}>
-            <Title>
-              {title}
-            </Title>
+          <Box style={{ flex: 10, flexDirection: 'column', justifyContent: "space-evenly" }}>
+            <Title>{title}</Title>
             <Subtitle>
-              {subtitle} - {player.duration.toFixed(2).replace(".", ":")} min
+              {subtitle} - {player.duration.toFixed(2).replace('.', ':')} min
             </Subtitle>
           </Box>
           <Box
             style={{
               flex: 2,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <IconButton onClick={() => handlePlayPause()} color="primary">
@@ -61,8 +62,8 @@ const Player = (props) => {
         <Box
           style={{
             flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           <Slider

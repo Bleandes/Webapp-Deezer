@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  height: 90px;
+  height: 5rem;
   background-color: #1E1E1E;
-  padding: 6pt;
 `;
 
 export const Thumbnail = styled.img`
@@ -20,11 +19,15 @@ export const Slider = styled.input`
   margin: 0;
 `;
 
-export const Title = styled.marquee`
+export const Title = styled.p`
   margin: 0;
+  font-size: .8em;
   color: #E5E3E3;
+  margin: 0;
 `;
 
-export const Subtitle = styled.small`
+export const Subtitle = styled.p`
+  font-size: .8em;
   color: #E5E3E3;
+  margin: 0;
 `;
