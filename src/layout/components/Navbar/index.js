@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useDispatch } from 'react-redux';
 import Navigation from "../../../components/Navigation";
 import Player from "../../../components/Player";
 import TextField from "../../../components/TextField";
@@ -7,8 +7,12 @@ import { Container, NavView, PlayerView, SearchView } from "./style";
 
 import routes from "../../../routes";
 
-const Navbar = () => {
-  const [search, setSearch] = useState();
+import connector from "../../../store/music/connector";
+
+function Component(props) {
+  const { searchText, setSearchText } = props;
+  const dispatch = useDispatch();
+
   return (
     <Container>
       <NavView>
@@ -24,8 +28,8 @@ const Navbar = () => {
       </PlayerView>
       <SearchView>
         <TextField
-          onChange={(event) => setSearch(event.target.value)}
-          value={search}
+          onChange={(event) => dispatch(setSearchText(event.target.value))}
+          value={searchText}
           placeholder="Search"
           icon={
             <svg
@@ -45,6 +49,7 @@ const Navbar = () => {
       </SearchView>
     </Container>
   );
-};
+}
 
+export const Navbar = connector(Component);
 export default Navbar;
