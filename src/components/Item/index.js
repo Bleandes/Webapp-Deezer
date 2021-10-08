@@ -1,20 +1,60 @@
 import React from "react";
-import { Box, Container, Thumbnail, Title, Subtitle, Icon } from "./style";
+import {
+  Box,
+  Container,
+  Thumbnail,
+  Title,
+  Subtitle,
+  Icon,
+  Button,
+} from "./style";
 
 const Item = (props) => {
-  const { thumbnail, title, subtitle, iconfav, icondetail, onClick } = props;
+  const {
+    thumbnail,
+    title,
+    subtitle,
+    iconfav,
+    icondetail,
+    onPlay,
+    onFav,
+    onOpen,
+    onRemove,
+  } = props;
   return (
     <div>
-      <Container onClick={() => onClick()}>
-        <Thumbnail src={thumbnail} />
+      <Container>
+        <Thumbnail onClick={() => onPlay()} src={thumbnail} />
         <Box style={{ flex: 11, flexDirection: "column", padding: "8pt" }}>
           <Box style={{ flex: 1 }}>
-            <Box style={{ flex: 10, flexDirection: "column" }}>
+            <Box
+              onClick={() => onPlay()}
+              style={{ flex: 10, flexDirection: "column" }}
+            >
               <Title>{title}</Title>
               <Subtitle>{subtitle} -</Subtitle>
             </Box>
-            <Icon>{iconfav}</Icon>
-            <Icon> {icondetail}</Icon>
+            {typeof onFav === "function" ? (
+              <Button onClick={() => onFav()}>
+                <Icon>{iconfav}</Icon>
+              </Button>
+            ) : (
+              ""
+            )}
+            {typeof onOpen === "function" ? (
+              <Button>
+                <Icon> {icondetail}</Icon>
+              </Button>
+            ) : (
+              ""
+            )}
+            {typeof onRemove === "function" ? (
+              <Button>
+                <Icon>{iconfav}</Icon>
+              </Button>
+            ) : (
+              ""
+            )}
           </Box>
         </Box>
       </Container>
@@ -23,7 +63,10 @@ const Item = (props) => {
 };
 
 Item.defaultProps = {
-  onClick: () => undefined,
+  onPlay: () => undefined,
+  onFav: undefined,
+  onOpen: undefined,
+  onRemove: undefined,
 };
 
 export default Item;

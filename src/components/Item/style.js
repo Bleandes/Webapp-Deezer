@@ -33,3 +33,8 @@ export const Icon = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+
+export const Button = styled.button`
+  
+`;

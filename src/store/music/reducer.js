@@ -10,6 +10,7 @@ const musicState = {
     thumbnail: "https://api.deezer.com/album/229212592/image",
     src: "",
   },
+  favorites: [],
 };
 
 function reducer(state = musicState, action) {
@@ -20,6 +21,9 @@ function reducer(state = musicState, action) {
       return { ...state, ...action.value };
     case ActionType.SET_PLAYER:
       return { ...state, ...action.value };
+    case ActionType.SET_FAVORITE:
+      state.favorites.push('aee');
+      return { ...state };
 
     default:
       return state;

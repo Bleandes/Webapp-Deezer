@@ -28,3 +28,10 @@ export function setPlayer(
     value: { player: value },
   };
 }
+
+export function setFavorite(value = {}) {
+  return {
+    type: ActionType.SET_FAVORITE,
+    value: value,
+  };
+}

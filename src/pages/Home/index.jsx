@@ -18,6 +18,7 @@ const Home = connector((props) => {
     setSearchResult,
     searchResult,
     setPlayer,
+    setFavorite,
   } = props;
   const [_timerId, setTimerId] = useState(0);
   const dispatch = useDispatch();
@@ -69,7 +70,7 @@ const Home = connector((props) => {
           title={music.title}
           subtitle={music.artist.name}
           thumbnail={music.album.cover}
-          onClick={() =>
+          onPlay={() =>
             dispatch(
               setPlayer({
                 id: music.id,
@@ -80,6 +81,8 @@ const Home = connector((props) => {
               })
             )
           }
+          onOpen={() => {}}
+          onFav={() => dispatch(setFavorite(music))}
           iconfav={
             <svg
               width="20"
