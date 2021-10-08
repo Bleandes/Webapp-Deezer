@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   height: 4rem;
-  background-color: #1e1e1e;
-  padding: 6pt;
+  padding: 6pt 0;
 `;
 
 export const Thumbnail = styled.img`

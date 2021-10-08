@@ -22,5 +22,5 @@ export const PageView = styled(Box)`
   flex: 11.5;
   overflow: hidden;
   overflow-y: scroll;
-  padding: 0 12pt;
+  padding: 8pt 8pt 0;
 `;
