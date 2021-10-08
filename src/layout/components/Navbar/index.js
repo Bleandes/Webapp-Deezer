@@ -28,7 +28,7 @@ function Component(props) {
       </PlayerView>
       <SearchView>
         <TextField
-          onChange={(event) => dispatch(setSearchText(event.target.value))}
+          onChange={(event) => setSearchText(event.target.value)}
           value={searchText}
           placeholder="Search"
           icon={

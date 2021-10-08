@@ -42,14 +42,14 @@ const Item = (props) => {
               ""
             )}
             {typeof onOpen === "function" ? (
-              <Button>
+              <Button onClick={() => onOpen()}>
                 <Icon> {icondetail}</Icon>
               </Button>
             ) : (
               ""
             )}
             {typeof onRemove === "function" ? (
-              <Button>
+              <Button onClick={() => onRemove()}>
                 <Icon>{iconfav}</Icon>
               </Button>
             ) : (

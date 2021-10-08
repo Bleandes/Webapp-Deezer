@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import TextField from "../../components/TextField";
 import Item from "../../components/Item";
 import Titles from "../../components/Titles";
@@ -21,13 +20,12 @@ const Home = connector((props) => {
     setFavorite,
   } = props;
   const [_timerId, setTimerId] = useState(0);
-  const dispatch = useDispatch();
 
   const search = useCallback(async () => {
     try {
       const { data } = await api.search(searchText);
       if (data.data) {
-        dispatch(setSearchResult(data.data));
+        setSearchResult(data.data);
       }
     } catch (error) {
       console.error(error);
@@ -46,7 +44,7 @@ const Home = connector((props) => {
   return (
     <Page>
       <TextField
-        onChange={(event) => dispatch(setSearchText(event.target.value))}
+        onChange={(event) => setSearchText(event.target.value)}
         value={searchText}
         placeholder="Search"
         icon={
@@ -67,22 +65,21 @@ const Home = connector((props) => {
       <Titles title="Lista de Musicas" />
       {searchResult.map((music) => (
         <Item
+          key={music.id}
           title={music.title}
           subtitle={music.artist.name}
           thumbnail={music.album.cover}
           onPlay={() =>
-            dispatch(
-              setPlayer({
-                id: music.id,
-                title: music.title,
-                subtitle: music.artist.name,
-                thumbnail: music.album.cover,
-                src: music.preview,
-              })
-            )
+            setPlayer({
+              id: music.id,
+              title: music.title,
+              subtitle: music.artist.name,
+              thumbnail: music.album.cover,
+              src: music.preview,
+            })
           }
-          onOpen={() => {}}
-          onFav={() => dispatch(setFavorite(music))}
+          onOpen={() => window.open(music.link)}
+          onFav={() => setFavorite(music)}
           iconfav={
             <svg
               width="20"

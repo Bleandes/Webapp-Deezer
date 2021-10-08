@@ -1,7 +1,7 @@
 import ActionType from "./actionsType";
 
 const musicState = {
-  searchText: "",
+  searchText: "brazil",
   searchResult: [],
   player: {
     id: undefined,
@@ -22,8 +22,13 @@ function reducer(state = musicState, action) {
     case ActionType.SET_PLAYER:
       return { ...state, ...action.value };
     case ActionType.SET_FAVORITE:
-      state.favorites.push('aee');
+      state.favorites.push(action.value);
       return { ...state };
+    case ActionType.REMOVE_FAVORITE:
+      return {
+        ...state,
+        favorites: state.favorites.filter((_v, i) => i !== action.value),
+      };
 
     default:
       return state;

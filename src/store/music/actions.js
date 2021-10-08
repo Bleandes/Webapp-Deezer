@@ -35,3 +35,10 @@ export function setFavorite(value = {}) {
     value: value,
   };
 }
+
+export function removeFavorite(index) {
+  return {
+    type: ActionType.REMOVE_FAVORITE,
+    value: index,
+  };
+}
