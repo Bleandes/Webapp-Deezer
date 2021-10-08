@@ -1,14 +1,24 @@
 import React from 'react';
-// import { Container, Input } from './style';
+import { Box, Container, Thumbnail, Title, Subtitle, Icon } from './style';
 
 const Item = (props) => {
-  // const { placeholder, icon, value, onChange } = props;
+  const { thumbnail, title, subtitle, iconfav, icondetail } = props;
   return (
-    <div></div>
-    // <Container>
-    //   {/* <Thumbnail src={thumbnail} />
-    //   <Input placeholder={placeholder} value={value} onChange={onChange} /> */}
-    // </Container>
+    <div>
+      <Container>
+        <Thumbnail src={thumbnail} />
+        <Box style={{ flex: 11, flexDirection: 'column', padding: '8pt' }}>
+          <Box style={{ flex: 1 }}>
+            <Box style={{ flex: 10, flexDirection: 'column' }}>
+              <Title>{title}</Title>
+              <Subtitle>{subtitle} -</Subtitle>
+            </Box>
+            <Icon>{iconfav}</Icon>
+            <Icon> {icondetail}</Icon>
+          </Box>
+        </Box>
+      </Container>
+    </div>
   );
 };
 
