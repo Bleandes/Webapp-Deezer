@@ -8,34 +8,32 @@ export const Container = styled.div`
 export const Thumbnail = styled.img`
   background: #000;
   color: #fff;
-  padding: 20px;
   width: 267px;
-  height: 343px;
-  flex: 3;
+  height: 283px;
 `;
 
 export const Box = styled.div`
-  background: #000;
-  height: 50px;
-  width: 50px;
-  margin: 5px;
+  flex:12;
+  width: 200px;
+  height: 343px;
 `;
 
 export const Title = styled.h5`
   margin: 0;
   color: #e5e3e3;
   font-size: 12px;
-  margin-top: 0.6rem;
+  margin: 0.5rem 0.3rem;
 `;
 
 export const Subtitle = styled.p`
   color: #e5e3e3;
   font-size: 11px;
+  margin: 0.2rem 0.3rem;
 `;
 
 export const Icon = styled.div`
-  flex: 2;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
 `;

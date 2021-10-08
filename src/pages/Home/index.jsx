@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import TextField from "../../components/TextField";
 import Item from "../../components/Item";
@@ -7,11 +7,31 @@ import Titles from "../../components/Titles";
 import { Page } from "./style";
 import Card from "../../components/Card";
 
+import * as api from "../../services/api";
+
 import connector from "../../store/music/connector";
 
 const Home = connector((props) => {
   const { searchText, setSearchText } = props;
+  const [_timerId, setTimerId] = useState(0);
   const dispatch = useDispatch();
+
+  const search = useCallback(async () => {
+    try {
+      console.log(await api.search(searchText));
+    } catch (error) {
+      console.error(error);
+    }
+  }, [searchText]);
+
+  useEffect(() => {
+    setTimerId((timeId) => {
+      clearTimeout(timeId);
+      return setTimeout(() => {
+        search();
+      }, 400);
+    });
+  }, [searchText]);
 
   return (
     <Page>
