@@ -1,9 +1,11 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import routes from './routes';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Layout from "./layout";
+import routes from "./routes";
 
 function App() {
   return (
-      <Router>
+    <Router>
+      <Layout.Default>
         <Switch>
           {routes.map((route) => (
             <Route
@@ -14,7 +16,8 @@ function App() {
             />
           ))}
         </Switch>
-      </Router>
+      </Layout.Default>
+    </Router>
   );
 }
 

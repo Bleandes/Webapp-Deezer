@@ -1,6 +1,5 @@
 import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
-import Test from "./pages/test"
 
 const routes = [
   {
@@ -9,8 +8,8 @@ const routes = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="31"
-        height="31"
+        width="inerht"
+        height="inerht"
         viewBox="0 0 31 31"
         fill="inerht"
       >
@@ -20,7 +19,7 @@ const routes = [
         />
       </svg>
     ),
-    componente: Test,
+    componente: Home,
   },
   {
     path: "/favorites",
@@ -28,8 +27,8 @@ const routes = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="31"
-        height="31"
+        width="inerht"
+        height="inerht"
         viewBox="0 0 31 31"
         fill="inerht"
       >

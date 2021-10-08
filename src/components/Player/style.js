@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  height: 5rem;
-  background-color: #1E1E1E;
+  flex: 1;
+  max-height: 5rem;
 `;
 
 export const Thumbnail = styled.img`
-  flex: 1
+  height: 100%
 `;
 
 export const Box = styled.div`
